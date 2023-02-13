@@ -92,12 +92,15 @@ if uploaded_file is not None:
         ax_result.imshow(img_top[0], cmap='gray')
         ax_result.axis('off')
         st.pyplot(fig_result)
-
+    sigma3 = sigma3[0]
     st.write('''#### Размер исходных матриц:''')
     st.write('V = ', V.shape[0], 'x', V.shape[1], '=', V.shape[0]*V.shape[1], 'значений'  )
     st.write('Sigma = ', sigma.shape[0], 'x', sigma.shape[1], '=', sigma.shape[0] * sigma.shape[1], 'значений'  )
     st.write('U = ', U.shape[0], 'x', U.shape[1], '=', U.shape[0] * U.shape[1], 'значений'  )
     st.write('''#### Размер новых матриц:''')
     st.write('V = ', V3.shape[0], 'x', V3.shape[1], '=', V3.shape[0]*V3.shape[1], 'значений'  )
-    st.write('Sigma = ', sigma3[0].shape[0], 'x', sigma3[0].shape[1], '=', sigma3[0].shape[0] * sigma3[0].shape[1], 'значений'  )
+    st.write('Sigma = ', sigma3.shape[0], 'x', sigma3.shape[1], '=', sigma3.shape[0] * sigma3.shape[1], 'значений'  )
     st.write('U = ', U3.shape[0], 'x', U3.shape[1], '=', U3.shape[0] * U3.shape[1], 'значений'  )
+    st.write('#### Объем данных в памяти для хранения каждой матрицы:')
+    st.write(f'Было: {V.nbytes//1024}kb, {sigma.nbytes//1024}kb, {U.nbytes//1024}kb')
+    st.write(f'Стало: {V3.nbytes//1024}kb, {sigma3.nbytes//1024}kb, {U3.nbytes//1024}kb')
